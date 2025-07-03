@@ -29,6 +29,37 @@ const weatherCodes = {
   99: "Thunderstorm with heavy hail",
 };
 
+const emojis = {
+  "Clear sky": "☀️",
+  "Mainly clear": "🌤️",
+  "Partly cloudy": "⛅",
+  Overcast: "☁️",
+  Fog: "🌫️",
+  "Depositing rime fog": "🌁",
+  "Light drizzle": "🌦️",
+  "Moderate drizzle": "🌦️",
+  "Dense drizzle": "🌧️",
+  "Light freezing drizzle": "🌧️",
+  "Dense freezing drizzle": "🌧️",
+  "Slight rain": "🌧️",
+  "Moderate rain": "🌧️",
+  "Heavy rain": "🌧️",
+  "Light freezing rain": "🌧️",
+  "Heavy freezing rain": "🌧️",
+  "Slight snow fall": "🌨️",
+  "Moderate snow fall": "🌨️",
+  "Heavy snow fall": "🌨️",
+  "Snow grains": "🌨️",
+  "Slight rain showers": "🌦️",
+  "Moderate rain showers": "🌦️",
+  "Violent rain showers": "🌧️",
+  "Slight snow showers": "🌨️",
+  "Heavy snow showers": "🌨️",
+  Thunderstorm: "⛈️",
+  "Thunderstorm with slight hail": "⛈️",
+  "Thunderstorm with heavy hail": "⛈️",
+};
+
 const fetchWeather = (retries) => {
   fetch(
     "https://api.open-meteo.com/v1/forecast?latitude=35&longitude=139&current_weather=true"
