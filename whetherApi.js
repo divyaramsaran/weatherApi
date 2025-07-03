@@ -42,6 +42,14 @@ const fetchWeather = (retries) => {
       }
       const weatherDescription = weatherCodes[weatherCode] || "Unknown weather";
       console.log("Current weather:", weatherDescription);
+    })
+    .catch((error) => {
+      if (retries > 0) {
+        console.warn(`Fetch failed, retrying... (${retries} retries left)`);
+        setTimeout(() => fetchWeather(retries - 1), 1000);
+      } else {
+        console.error("Failed to fetch weather data:", error);
+      }
     });
 };
 
