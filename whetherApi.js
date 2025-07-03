@@ -28,3 +28,21 @@ const weatherCodes = {
   96: "Thunderstorm with slight hail",
   99: "Thunderstorm with heavy hail",
 };
+
+const fetchWeather = (retries) => {
+  fetch(
+    "https://api.open-meteo.com/v1/forecast?latitude=35&longitude=139&current_weather=true"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      const weatherCode = data.current_weather.weathercode;
+      if (weatherCode === undefined) {
+        console.error("Weather code is undefined");
+        return;
+      }
+      const weatherDescription = weatherCodes[weatherCode] || "Unknown weather";
+      console.log("Current weather:", weatherDescription);
+    });
+};
+
+fetchWeather();
